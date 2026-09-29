@@ -119,16 +119,10 @@ def tokenizator(string):
 
 
 def calc(string):
-    # 1. Validation
     validate(string)
-
-    # 2. Tokenization + RPN
     massiv = tokenizator(string)
-
     if len(massiv) == 0:
         raise MissingOperandError("Не найдено операндов в выражении")
-
-    # 3. Calculation
     stek = []
     ops = {"+", "-", "*", "/", "%", "//"}
 
