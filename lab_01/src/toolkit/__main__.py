@@ -6,16 +6,16 @@ from toolkit.errors import ToolkitError
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Toolkit")
+    parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    calc_parser = subparsers.add_parser("calc", help="вычислить выражение")
-    calc_parser.add_argument("expression", type=str, help="выражение")
+    calc_parser = subparsers.add_parser("calc")
+    calc_parser.add_argument("expression", type=str)
 
-    conv_parser = subparsers.add_parser("convert", help="конвертировать величину")
-    conv_parser.add_argument("value", type=str, help="число")
-    conv_parser.add_argument("--from", dest="from_unit", type=str, required=True, help="из единицы")
-    conv_parser.add_argument("--to", dest="to_unit", type=str, required=True, help="в единицу")
+    conv_parser = subparsers.add_parser("convert")
+    conv_parser.add_argument("value", type=str)
+    conv_parser.add_argument("--from", dest="from_unit", type=str, required=True)
+    conv_parser.add_argument("--to", dest="to_unit", type=str, required=True)
 
     args = parser.parse_args()
 

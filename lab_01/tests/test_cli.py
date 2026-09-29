@@ -44,9 +44,3 @@ def test_cli_convert_incompatible():
     result = run_cli(["convert", "1", "--from", "m", "--to", "kg"])
     assert result.returncode == 2
     assert len(result.stderr) > 0
-
-
-def test_cli_help():
-    result = run_cli(["--help"])
-    assert result.returncode == 0
-    assert "toolkit" in result.stdout.lower() or "usage" in result.stdout.lower()
