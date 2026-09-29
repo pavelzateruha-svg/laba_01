@@ -1,9 +1,8 @@
 from decimal import Decimal, getcontext, ROUND_HALF_UP, ROUND_FLOOR, InvalidOperation
 from toolkit.errors import (
-    EmptyExpressionError,
+    EmptyVirazenieError,
     InvalidCharacterError,
     MissingOperandError,
-    ConsecutiveOperatorsError,
     DivisionByZeroError,
 )
 
@@ -47,7 +46,7 @@ def to_rpn(massiv):
 
 def validate(string):
     if not string or not string.strip():
-        raise EmptyExpressionError("Выражение не может быть пустым")
+        raise EmptyVirazenieError("Выражение не может быть пустым")
 
     allowed = set("0123456789.+-*/%() ")
     for char in string:

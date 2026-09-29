@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 
-def run_cli(args: list[str]) -> subprocess.CompletedProcess:
+def run_cli(args):
     return subprocess.run(
         [sys.executable, "-m", "toolkit"] + args,
         capture_output=True,
